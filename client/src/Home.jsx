@@ -19,8 +19,12 @@ function Home() {
     <div>
       {/* <p>The data is: {info.name}</p> */}
       <p>Hello web developer!</p>
-      <p>Dont delete the commented code it will be used to connect our server!</p>
-      
+      <p>
+        This is the branch developer and it is our base branch next to main
+        until development, so this is where we will be merging the
+        'testing-that-test' so use what in here.!
+      </p>
+      <p>MAKE SURE YOU CHECK THE BRANCH IN YOUR TERMINAL!</p>
     </div>
   );
 }
