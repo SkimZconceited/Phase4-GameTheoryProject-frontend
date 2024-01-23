@@ -19,8 +19,10 @@ function Home() {
     <div>
       {/* <p>The data is: {info.name}</p> */}
       <p>Hello web developer!</p>
-      <p>Dont delete the commented code it will be used to connect our server!</p>
-      
+      <p>
+        Dont delete the commented code it will be used to connect our server!
+        Next branch to this is 'developer'
+      </p>
     </div>
   );
 }
