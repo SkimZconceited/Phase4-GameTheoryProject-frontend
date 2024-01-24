@@ -1,16 +1,23 @@
-import React from 'react'
+import React from 'react';
 import Cell from './Cell';
 
 function Board() {
+  const renderCell = (row, col) => {
+    const isDarkSquare = (row + col) % 2 === 1;
+    const cellValue = `${row}${col}`;
 
-  const renderCell = (i) => {
-    return <Cell value={i} />;
-};
+    return <Cell key={`${row}-${col}`} value={cellValue} isDark={isDarkSquare} />;
+  };
+
   return (
-    <div>
-      {Array(9).fill(null).map((_, i) => renderCell(i))}
+    <div className="board">
+      {Array(8).fill(null).map((_, row) => (
+        <div key={row} className="board-row">
+          {Array(8).fill(null).map((_, col) => renderCell(row, col))}
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Board
+export default Board;
