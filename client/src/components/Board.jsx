@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from './Cell';
+import '../Board.css'
 
 function Board() {
   const renderCell = (row, col) => {
