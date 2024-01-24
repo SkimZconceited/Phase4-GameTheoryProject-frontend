@@ -1,5 +1,6 @@
 import React from "react";
 // import { useEffect, useState } from 'react';
+import Board from "./components/Board";
 
 function Home() {
   // const [info, setInfo] = useState({})
@@ -20,7 +21,8 @@ function Home() {
       {/* <p>The data is: {info.name}</p> */}
       <p>Hello web developer!</p>
       <p>This is one branch after developer branch for testing the creation of the board!</p>
-      
+      {/* {renderCell()} */}
+      <Board />
     </div>
   );
 }
