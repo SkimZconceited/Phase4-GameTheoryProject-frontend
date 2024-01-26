@@ -5,9 +5,11 @@ import '../Board.css'
 function Board() {
   const renderCell = (row, col) => {
     const isDarkSquare = (row + col) % 2 === 1;
-    const cellValue = `${row}${col}`;
 
-    return <Cell key={`${row}-${col}`} value={cellValue} isDark={isDarkSquare} />;
+    // For determining if the cell should have a piece
+    const hasPiece = (row < 3 && !isDarkSquare) || (row > 4 && isDarkSquare);
+
+    return <Cell key={`${row}-${col}`} isDark={isDarkSquare} hasPiece={hasPiece} />;
   };
 
   return (
