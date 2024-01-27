@@ -2,31 +2,41 @@ import React from 'react';
 import Cell from './Cell';
 import '../Board.css';
 
+const board = [
+  [" ", "W", " ", "W", " ", "B", " ", "W"],
+  ["B", " ", "B", " ", "B", " ", "B", " "],
+  [" ", "W", " ", "W", " ", "W", " ", "W"],
+  [" ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", "B", " ", "B", " ", "B", " ", "B"],
+  [" ", " ", "B", " ", "B", " ", "B", " "],
+  ["W", " ", "W", " ", "W", " ", "W", " "],
+  [" ", "B", " ", "B", " ", "B", " ", " "],
+];
+
 function Board() {
-  const renderCell = (row, col) => {
+  const renderCell = (row, col, piece) => {
     const isDarkSquare = (row + col) % 2 === 1;
-  
+
     // For determining if the cell should have a piece
-    const hasPiece = (row < 3 || row > 4) && isDarkSquare;
-  
-    // Invert the color for the bottom side
-    const pieceColor = row < 3 ? 'white' : 'black';
-  
+    const hasPiece = piece !== " ";
+
     return (
-      <Cell key={`${row}-${col}`} isDark={isDarkSquare} hasPiece={hasPiece} pieceColor={pieceColor} />
+      <Cell
+        key={`${row}-${col}`}
+        isDark={isDarkSquare}
+        hasPiece={hasPiece}
+        pieceColor={piece === "W" ? "white" : "black"}
+      />
     );
   };
+
   return (
     <div className="board">
-      {Array(8)
-        .fill(null)
-        .map((_, row) => (
-          <div key={row} className="board-row">
-            {Array(8)
-              .fill(null)
-              .map((_, col) => renderCell(row, col))}
-          </div>
-        ))}
+      {board.map((row, rowIndex) => (
+        <div key={rowIndex} className="board-row">
+          {row.map((piece, colIndex) => renderCell(rowIndex, colIndex, piece))}
+        </div>
+      ))}
     </div>
   );
 }
