@@ -1,13 +1,12 @@
 .landing{
     align-items: center;
     text-align: center;
-    color: red;
+    color: rgb(255, 255, 255);
     font-size: xx-large;
     justify-content: center;
     font-style:normal;
 }
 
-/* Basic button styling */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -16,36 +15,15 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid #db3434;
+    border: 2px solid #120b27;
     border-radius: 5px;
     color: #ffffff;
-    background-color: #101111;
+    background-color: #2adf2a;
     transition: background-color 0.3s ease;
   }
   
-  /* Hover effect */
   .button:hover {
     background-color: #050708;
   }
   
-  /* Additional styles for different button types */
-  .primary-button {
-    background-color: #2ecc71;
-    border-color: #27ae60;
-  }
-  
-  .primary-button:hover {
-    background-color: #218c58;
-  }
-  
-  .secondary-button {
-    background-color: #e74c3c;
-    border-color: #c0392b;
-  }
-  
-  .secondary-button:hover {
-    background-color: #d62c1a;
-  }
-  
-  /* You can add more button types and styles as needed */
   
