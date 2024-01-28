@@ -14,6 +14,7 @@ const board = [
 ];
 
 function Board() {
+
   const renderCell = (row, col, piece) => {
     const isDarkSquare = (row + col) % 2 === 1;
 
@@ -26,6 +27,7 @@ function Board() {
         isDark={isDarkSquare}
         hasPiece={hasPiece}
         pieceColor={piece === "W" ? "white" : "black"}
+        pieceId={`${row}-${col}`}
       />
     );
   };
