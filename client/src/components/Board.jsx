@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Cell from './Cell';
 import '../Board.css';
 
@@ -14,6 +14,17 @@ const board = [
 ];
 
 function Board() {
+
+  useEffect(()=> {
+    fetch('/start_game', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({board})
+    }).then(res => res.json()).then((data) => {
+      console.log(data)
+
+    })
+  }, [])
 
   const renderCell = (row, col, piece) => {
     const isDarkSquare = (row + col) % 2 === 1;
